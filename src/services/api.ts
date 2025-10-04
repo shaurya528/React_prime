@@ -7,6 +7,7 @@ export const artworkService = {
   async getArtworks(params: PaginationParams): Promise<ArtworkApiResponse> {
     try {
       const { page, limit } = params
+      
         
          const response = await axios.get<ArtworkApiResponse>(
         `${API_BASE_URL}?page=${page}&limit=${limit}`
