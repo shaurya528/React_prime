@@ -1,28 +1,16 @@
 import React from 'react';
-
-// Define interface locally
-interface Artwork {
-  id: number
-  title: string
-  artist_display: string
-  date_display: string
-  medium_display: string
-  dimensions: string
-  is_public_domain: boolean
-  is_on_view: boolean
-  image_id: string | null
-}
+import type { Artwork } from '../types';
 
 interface SelectionPanelProps {
-  selectedArtworks: Artwork[]
-  onClearSelection: () => void
+  selectedArtworks: Artwork[];
+  onClearSelection: () => void;
 }
 
 const SelectionPanel: React.FC<SelectionPanelProps> = ({ 
   selectedArtworks, 
   onClearSelection 
 }) => {
-  if (selectedArtworks.length === 0) return null
+  if (selectedArtworks.length === 0) return null;
 
   return (
     <div className="p-3 surface-100 border-1 border-200 border-round mb-3">
@@ -53,4 +41,4 @@ const SelectionPanel: React.FC<SelectionPanelProps> = ({
   );
 };
 
-export default SelectionPanel
+export default SelectionPanel;
