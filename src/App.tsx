@@ -1,35 +1,29 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import React from 'react'
+import { PrimeReactProvider } from 'primereact/api'
+import ArtworkTable from './components/ArtworkTable'
+import "primereact/resources/themes/lara-light-cyan/theme.css"
+import "primereact/resources/primereact.min.css"
+import "primeicons/primeicons.css"
+import "primeflex/primeflex.css"
 import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+const App: React.FC = () => {
+  return ( 
+    <PrimeReactProvider>
+       <div className="app-container">
+        <div className="surface-section px-4 py-4 md:px-6 lg:px-8">
+           <div className="flex align-items-center justify-content-between mb-4">
+            <div>
+              <h1 className="text-3xl font-bold text-900 mb-1">demo</h1>
+              <p className="text-600 m-0">Browse artworks </p>
+             </div>
+          </div>
+           
+          <ArtworkTable />
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+      </PrimeReactProvider>
+  );
+};
 
-export default App
+export default App;
